@@ -11,8 +11,8 @@ Target::Target(const CVector2D& pos):Base(eType_Enemy) {//Enemyタイプ(後に変更)
 
 void Target::Update(){
 	m_cnt++;
-	if (m_cnt >= 480) {
-		SetKill();//8秒後に自動的に消滅
+	if (m_cnt >= 300) {
+		SetKill();//5秒後に自動的に消滅
 	}
 }
 

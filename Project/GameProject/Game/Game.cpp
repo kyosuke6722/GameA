@@ -16,43 +16,39 @@ Game::~Game(){
 	Base::KillAll();//全オブジェクトを破棄
 }
 
-void Game::Update(){
-	if (--m_cnt < 0) {
-		m_cnt = rand() % 120 + 180;//待機時間3～5秒
-		m_rand = rand() % 10;
+void Game::Update() {
+	if (--m_cnt < 0&&!m_flag) {
+		m_cnt = rand() % 120 +60;//待機時間1～3秒
+		m_rand = rand() % 8;
 		m_flag = true;
 	}
 	if (m_flag) {
 		switch (m_rand) {
 		case 0:
-			Base::Add(new Target(CVector2D(256*m_rand,144*(2-m_rand))));
+			Base::Add(new Target(CVector2D(256 * m_rand, 144 * 2+64)));
 			break;
 		case 1:
-			Base::Add(new Target(CVector2D(256 * m_rand, 144 * (2 - m_rand))));
+			Base::Add(new Target(CVector2D(256 * m_rand, 144 * 1+64)));
 			break;
 		case 2:
-			Base::Add(new Target(CVector2D(256 * m_rand, 144 * (2 - m_rand))));
+			Base::Add(new Target(CVector2D(256 * m_rand, 144 * 0+64)));
 			break;
 		case 3:
-			Base::Add(new Target(CVector2D(256 * m_rand, 120)));
+			Base::Add(new Target(CVector2D(256 * m_rand, 144 * 1+64)));
 			break;
 		case 4:
-			Base::Add(new Target(CVector2D(256*m_rand, 120)));
+			Base::Add(new Target(CVector2D(256 * m_rand, 144 * 2 + 64)));
 			break;
 		case 5:
-			Base::Add(new Target(CVector2D(256 * (m_rand-4), 120)));
+			Base::Add(new Target(CVector2D(256 * (m_rand - 4), 144 * 3 + 64)));
 			break;
 		case 6:
-			Base::Add(new Target(CVector2D(256 * (m_rand - 4), 120)));
+			Base::Add(new Target(CVector2D(256 * (m_rand - 4), 144 * 4 + 64)));
 			break;
 		case 7:
-			Base::Add(new Target(CVector2D(256 * (m_rand - 4), 120)));
+			Base::Add(new Target(CVector2D(256 * (m_rand - 4), 144 * 3+ 64)));
 			break;
-		case 8:
-			Base::Add(new Target(CVector2D(256 * (m_rand - 4), 120)));
-			break;
-		case 9:
-			Base::Add(new Target(CVector2D(256 * (m_rand - 4), 120)));
-			break;
+		}
+		m_flag = false;
 	}
 }
