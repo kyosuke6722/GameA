@@ -1,8 +1,8 @@
 #include"BackGround.h"
 BackGround::BackGround() :Base(eType_Field)
 {
-	m_img = COPY_RESOURCE("Background", CImage);
-
+	m_img = COPY_RESOURCE("BackGround", CImage);
+	m_img.SetSize(1280, 720);
 
 
 

@@ -1,5 +1,6 @@
 //ゲーム係機能のインクルード
 #include <GLLibrary.h>
+#include"Game/Game.h"
 #define SCREEN_WIDTH 1280
 #define SCREEN_HEIGHT 720
 
@@ -63,7 +64,8 @@ void Init(void)
 	ADD_RESOURCE("Player", CImage::CreateImage("Image/Player.png"));
 	ADD_RESOURCE("Bullet", CImage::CreateImage("Image/Bullet.png"));
 	ADD_RESOURCE("Target", CImage::CreateImage("Image/Target.png"));
-
+	ADD_RESOURCE("BackGround", CImage::CreateImage("Image/BackGround.png"));
+	Base::Add(new Game());
 	
 }
 
