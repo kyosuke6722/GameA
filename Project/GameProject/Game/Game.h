@@ -2,9 +2,9 @@
 #include"../Base/Base.h"
 class Game :public Base {
 private:
-	int m_cnt;
-	int m_rand;
-	bool m_flag;
+	int m_cnt;//Targetの出現カウント
+	int m_rand;//乱数
+	bool m_flag;//Targetの出現フラグ
 public:
 	Game();
 	~Game();

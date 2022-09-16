@@ -3,6 +3,7 @@
 #include"Target.h"
 #include"BackGround.h"
 #include"UI.h"
+#include"GameData.h"
 
 Game::Game():Base(eType_Scene) {
 	m_cnt = 0;
@@ -10,7 +11,7 @@ Game::Game():Base(eType_Scene) {
 	m_flag = false;
 	Base::Add(new BackGround());
 	//Base::Add(new Player(CVector2D(640, 360)));
-	Base::Add(new Target(CVector2D(640, 120)));
+	Base::Add(new Target(CVector2D(640, 64)));
 	Base::Add(new UI());
 }
 
@@ -19,6 +20,10 @@ Game::~Game(){
 }
 
 void Game::Update() {
+	GameData::m_time--;
+	if (GameData::m_time < 0) {
+		SetKill();
+	}
 	if (--m_cnt < 0&&!m_flag) {
 		m_cnt = rand() %30 +60;//‘Ò‹@ŽžŠÔ1`1.5•b
 		m_rand = rand() % 8;
