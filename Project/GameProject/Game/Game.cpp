@@ -4,6 +4,7 @@
 #include"BackGround.h"
 #include"UI.h"
 #include"GameData.h"
+#include"../Title/Title.h"
 
 Game::Game():Base(eType_Scene) {
 	m_cnt = 0;
@@ -17,6 +18,12 @@ Game::Game():Base(eType_Scene) {
 
 Game::~Game(){
 	Base::KillAll();//全オブジェクトを破棄
+	//初期化
+	GameData::s_score_old = GameData::s_score;
+	GameData::s_score = 0;
+	GameData::m_time = 360;
+	//タイトルに戻る
+	Base::Add(new Title());
 }
 
 void Game::Update() {

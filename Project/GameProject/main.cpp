@@ -1,6 +1,6 @@
 //ゲーム係機能のインクルード
 #include <GLLibrary.h>
-#include"Game/Game.h"
+#include"Title/Title.h"
 #define SCREEN_WIDTH 1280
 #define SCREEN_HEIGHT 720
 
@@ -67,7 +67,7 @@ void Init(void)
 	ADD_RESOURCE("BackGround", CImage::CreateImage("Image/BackGround2.png"));
 	ADD_RESOURCE("Title", CImage::CreateImage("Image/BackGround.png"));
 	ADD_RESOURCE("UI", CImage::CreateImage("Image/UI.png"));
-	Base::Add(new Game());
+	Base::Add(new Title());
 	
 }
 
