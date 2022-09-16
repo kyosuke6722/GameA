@@ -1,5 +1,5 @@
 #include "Bullet.h"
-
+#include"GameData.h"
 Bullet::Bullet(int type, const CVector2D& pos, float ang, float speed)
 	:Base(type)
 {
@@ -49,6 +49,8 @@ void Bullet::Collision(Base* b)
 		if (m_type == eType_Player_Bullet && Base::CollisionCircle(this, b)) {
 			SetKill();
 			b->SetKill();
+
+			GameData::s_score += 100;
 		}
 		break;
 	}
