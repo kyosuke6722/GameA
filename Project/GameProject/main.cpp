@@ -59,17 +59,12 @@ void Init(void)
 	//‰Šú‰»‚Ì–½—ß‚ğ‘‚­
 	//ƒQ[ƒ€‹N“®‚Éˆê“x‚¾‚¯ŒÄ‚Î‚ê‚é
 	//-----------------------------------------------------
-
+	//‰æ‘œ“Ç‚İ‚İ
+	ADD_RESOURCE("Player", CImage::CreateImage("Image/Player.png"));
+	ADD_RESOURCE("Bullet", CImage::CreateImage("Image/Bullet.png"));
+	ADD_RESOURCE("Target", CImage::CreateImage("Image/Target.png"));
 
 	
-
-
-
-
-
-
-
-
 }
 
 
