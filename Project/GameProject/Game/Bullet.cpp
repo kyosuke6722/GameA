@@ -48,6 +48,7 @@ void Bullet::Collision(Base* b)
 
 	case eType_Enemy:
 		if (m_type == eType_Player_Bullet && Base::CollisionCircle(this, b)) {
+			SOUND("SE_Hit")->Play();
 			SetKill();
 			b->SetKill();
 

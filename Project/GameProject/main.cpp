@@ -71,6 +71,7 @@ void Init(void)
 	Base::Add(new Title());
 	
 	SOUND("BGM_Game")->Load("Sound/BGM/BGM_Game.wav",1);
+	SOUND("SE_Hit")->Load("Sound/SE/SE_Hit.wav", 1);
 
 }
 
