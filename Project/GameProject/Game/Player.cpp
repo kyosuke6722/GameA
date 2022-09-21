@@ -22,9 +22,9 @@ void Player::Update()
 	m_ang = atan2(vec.x, vec.y);
 
 	//’e‚Ì”­ŽËƒ{ƒ^ƒ“
-	if (PUSH(CInput::eMouseL) && m_cnt > 0) {
+	if (PUSH(CInput::eMouseL) && m_cnt <= 0) {
 		Base::Add(new Bullet(eType_Player_Bullet, m_pos, m_ang, 4));
-		m_cnt += 60;
+		m_cnt += 30;
 	}
 
 }
