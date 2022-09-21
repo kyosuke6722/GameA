@@ -8,6 +8,7 @@ m_title_text("C:\\Windows\\Fonts\\msgothic.ttc", 64),
 m_highscore("C:\\Windows\\Fonts\\msgothic.ttc", 40)
 {
 	m_img = COPY_RESOURCE("Title", CImage);
+	m_title = COPY_RESOURCE("Title_Name", CImage);
 	m_score_old = COPY_RESOURCE("UI", CImage);
 	m_img.SetSize(1280, 720);
 }
@@ -30,8 +31,10 @@ void Title::Update()
 void Title::Draw()
 {
 	m_img.Draw();
+	m_title.SetPos(64 * 7, 300);
+	m_title.Draw();
 	//文字表示
-	m_title_text.Draw(64*7, 300, 0, 0, 0, "的当てゲーム");
+	//m_title_text.Draw(64*7, 300, 0, 0, 0, "的当てゲーム");
 	m_title_text.Draw(64*8.5, 500, 0, 0, 0, "Push Z");
 	m_highscore.Draw(64 * 15.5, 510, 0, 0, 0, "ハイスコア");
 	int score = GameData::s_score_old;

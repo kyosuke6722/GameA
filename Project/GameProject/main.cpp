@@ -66,6 +66,7 @@ void Init(void)
 	ADD_RESOURCE("Target", CImage::CreateImage("Image/Target.png"));
 	ADD_RESOURCE("BackGround", CImage::CreateImage("Image/BackGround2.png"));
 	ADD_RESOURCE("Title", CImage::CreateImage("Image/BackGround.png"));
+	ADD_RESOURCE("Title_Name", CImage::CreateImage("Image/Title.png"));
 	ADD_RESOURCE("UI", CImage::CreateImage("Image/UI.png"));
 	Base::Add(new Title());
 	
