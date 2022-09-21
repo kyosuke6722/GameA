@@ -13,7 +13,7 @@ Game::Game():Base(eType_Scene) {
 	Base::Add(new BackGround());
 	Base::Add(new Player(CVector2D(640, 352)));
 	Base::Add(new UI());
-	//SOUND("BGM_Game")->Play();
+	SOUND("BGM_Game")->Play();
 }
 
 Game::~Game(){
@@ -33,8 +33,14 @@ void Game::Update() {
 	if (GameData::m_time < 0) {
 		SetKill();
 	}
-	if (--m_cnt < 0&&!m_flag) {
+	if (--m_cnt < 0&&!m_flag){
+		if (GameData::m_time < 1200)
+			m_cnt = 30;//‘Ò‹@ŽžŠÔ0.5•b
+		else if (GameData::m_time < 3000)
+			m_cnt = 48;//‘Ò‹@ŽžŠÔ0.8•b
+		else
 		m_cnt = 60;//‘Ò‹@ŽžŠÔ1•b
+
 		m_rand = rand() % 8;
 		m_flag = true;
 	}

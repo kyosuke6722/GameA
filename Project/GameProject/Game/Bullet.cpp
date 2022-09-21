@@ -5,7 +5,8 @@ Bullet::Bullet(int type, const CVector2D& pos, float ang, float speed)
 {
 	if (type == eType_Player_Bullet)
 		m_img = COPY_RESOURCE("Bullet", CImage);
-	
+	m_img.SetRect(321, 500, 539, 861);
+	m_img.SetSize(24, 32);
 	m_pos = pos;
 	m_img.SetCenter(16, 16);
 	m_ang = ang;

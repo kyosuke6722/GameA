@@ -6,7 +6,7 @@ Target::Target(const CVector2D& pos):Base(eType_Enemy) {//Enemyタイプ(後に変更)
 	m_img.SetRect(728, 213, 2781, 2267);
 	m_img.SetSize(128, 128);
 	m_img.SetCenter(64, 64);
-	m_rad = 16;
+	m_rad = 56;
 }
 
 void Target::Update(){
