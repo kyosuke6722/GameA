@@ -11,7 +11,7 @@ Game::Game():Base(eType_Scene) {
 	m_rand = rand();
 	m_flag = false;
 	Base::Add(new BackGround());
-	//Base::Add(new Player(CVector2D(640, 360)));
+	Base::Add(new Player(CVector2D(640, 352)));
 	Base::Add(new Target(CVector2D(640, 64)));
 	Base::Add(new UI());
 }
