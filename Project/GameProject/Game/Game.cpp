@@ -12,16 +12,18 @@ Game::Game():Base(eType_Scene) {
 	m_flag = false;
 	Base::Add(new BackGround());
 	Base::Add(new Player(CVector2D(640, 352)));
-	Base::Add(new Target(CVector2D(640, 64)));
 	Base::Add(new UI());
+	//SOUND("BGM_Game")->Play();
 }
 
 Game::~Game(){
 	Base::KillAll();//全オブジェクトを破棄
 	//初期化
-	GameData::s_score_old = GameData::s_score;
+	if (GameData::s_score_old < GameData::s_score) {
+		GameData::s_score_old = GameData::s_score;
+	}
 	GameData::s_score = 0;
-	GameData::m_time = 360;
+	GameData::m_time = 6000;
 	//タイトルに戻る
 	Base::Add(new Title());
 }
@@ -32,7 +34,7 @@ void Game::Update() {
 		SetKill();
 	}
 	if (--m_cnt < 0&&!m_flag) {
-		m_cnt = rand() %30 +60;//待機時間1～1.5秒
+		m_cnt = 60;//待機時間1秒
 		m_rand = rand() % 8;
 		m_flag = true;
 	}

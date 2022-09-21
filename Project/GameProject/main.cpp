@@ -69,6 +69,7 @@ void Init(void)
 	ADD_RESOURCE("UI", CImage::CreateImage("Image/UI.png"));
 	Base::Add(new Title());
 	
+	SOUND("BGM_Game")->Load("Sound/BGM/BGM_Game.wav",1);
 
 }
 
