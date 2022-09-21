@@ -69,6 +69,7 @@ void Init(void)
 	ADD_RESOURCE("UI", CImage::CreateImage("Image/UI.png"));
 	Base::Add(new Title());
 	
+
 }
 
 
